@@ -1,10 +1,18 @@
 import React from "react";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const Header = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
 
-    <div className="fixed top-0 left-0 w-full z-[1000] py-5 transition-all duration-400">
-      <div className="flex items-center justify-between w-full max-w-[1200px] mx-auto px-6">
+    <div data-aos="fade-up" className="fixed top-0 left-0 w-full z-[1000] py-5 transition-all duration-400">
+      <div  className="flex items-center justify-between w-full max-w-[1200px] mx-auto px-6">
       <div className="flex items-center gap-[10px] text-[20px] font-extrabold tracking-[-0.04em]">
         <div className="w-[30px] h-[30px] bg-[#ff6b6b] rounded-[8px] grid place-items-center text-[14px] font-extrabold text-white shadow-[0_0_24px_#ff6b6b59]">
           Q

@@ -1,23 +1,32 @@
 import React from "react";
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const Footer = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-6">
-      <div className="flex flex-wrap items-center justify-center gap-8 py-[28px] border-b border-[#ffffff0f]">
-        <a>Features</a>
+    <footer className="border-t border-t-[rgba(255,255,255,0.06)] p-0">
+    <div data-aos="fade-up" className="w-full max-w-[1200px] mx-auto px-6">
+      <div  className="flex flex-wrap items-center justify-center gap-8 py-[28px] border-b border-[#ffffff0f]">
+        <a className="text-[13px] text-[#55566a] tracking-[-0.01em] transition-colors duration-300 hover:text-[#eeeef0]">Features</a>
         <span className="w-[3px] h-[3px] rounded-full bg-[#ffffff1f] shrink-0"></span>
-        <a>Pricing</a>
+        <a className="text-[13px] text-[#55566a] tracking-[-0.01em] transition-colors duration-300 hover:text-[#eeeef0]">Pricing</a>
         <span className="w-[3px] h-[3px] rounded-full bg-[#ffffff1f] shrink-0"></span>
-        <a>Documentation</a>
+        <a className="text-[13px] text-[#55566a] tracking-[-0.01em] transition-colors duration-300 hover:text-[#eeeef0]">Documentation</a>
         <span className="w-[3px] h-[3px] rounded-full bg-[#ffffff1f] shrink-0"></span>
-        <a>Blog</a>
+        <a className="text-[13px] text-[#55566a] tracking-[-0.01em] transition-colors duration-300 hover:text-[#eeeef0]">Blog</a>
         <span className="w-[3px] h-[3px] rounded-full bg-[#ffffff1f] shrink-0"></span>
-        <a>Partners</a>
+        <a className="text-[13px] text-[#55566a] tracking-[-0.01em] transition-colors duration-300 hover:text-[#eeeef0]">Partners</a>
       </div>
       <div className="flex items-center justify-between pt-6 pb-7">
         <p className="text-[12.5px] text-[#8a8b9e]">
           Copyright © 2026 Quantix. Design:{" "}
-          <a href="https://templatemo.com" target="_blank" rel="nofollow">
+          <a className="text-[#ff6b6b] transition-colors duration-300" href="https://templatemo.com" target="_blank" rel="nofollow">
             TemplateMo
           </a>
         </p>
@@ -66,5 +75,6 @@ export const Footer = () => {
         </div>
       </div>
     </div>
+    </footer>
   );
 };

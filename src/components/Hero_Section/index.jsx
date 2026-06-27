@@ -1,12 +1,20 @@
 import React from 'react'
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const HeroSection = () => {
+  useEffect(() => {
+          AOS.init({
+            duration: 800,
+            once: true,
+          });
+        }, []);
   return (
     <section className="relative z-[1] grid grid-cols-2 gap-[60px] items-center max-w-[1200px] w-full mx-auto px-6 px-6 py-[180px] pb-[120px] overflow-hidden">
 
-  <div>
-    
-    <div className="inline-flex items-center gap-2 py-[5px] pr-[16px] pl-[7px] bg-[#ff6b6b14] border border-[rgba(255,107,107,0.2)] rounded-full text-[12.5px] font-semibold text-[#ff9b9b] mb-7">
+  <div data-aos="fade-up">
+
+    <div  className="inline-flex items-center gap-2 py-[5px] pr-[16px] pl-[7px] bg-[#ff6b6b14] border border-[rgba(255,107,107,0.2)] rounded-full text-[12.5px] font-semibold text-[#ff9b9b] mb-7">
       <div className="w-[7px] h-[7px] bg-[#22c55e] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)] animate-pulse"></div>
       <span>Version 2.0 is Live</span>
     </div>

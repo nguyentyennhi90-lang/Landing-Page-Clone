@@ -1,9 +1,17 @@
 import React from 'react'
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export const SubSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
   return (
   <section className="relative overflow-hidden text-center pt-[100px] pb-[120px]">
-        <div className="w-full max-w-[1200px] mx-auto px-6">
+        <div data-aos="fade-up" className="w-full max-w-[1200px] mx-auto px-6">
             <div className="relative z-[1] max-w-[520px] mx-auto opacity-100 translate-y-0 transition-[opacity,transform] duration-[700ms] ease-in">
                 <h2 className="text-[36px] font-extrabold tracking-[-0.04em] leading-[1.1] mb-3">Stay in the loop</h2>
                 <p className="max-w-[380px] mx-auto mb-[32px] text-[15px] text-[#8a8b9e] leading-[1.7]">Product updates, engineering insights, and zero spam. Unsubscribe anytime.</p>
